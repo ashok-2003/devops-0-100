@@ -1,0 +1,12 @@
+app_name: flaskapp
+app_user: flaskapp
+app_dir: /opt/flaskapp
+app_port: 8000
+
+db_name: flaskdb
+db_user: flaskuser
+db_password: "ChangeMe_SuperStrong123!"   # TIP: put this in Ansible Vault later
+db_host: "127.0.0.1"
+db_port: 5432
+
+server_name: "_"   # keep "_" for IP use; put your domain if you have one
