@@ -1,0 +1,9 @@
+- name: Example Playbook with Conditional Statements
+  hosts: localhost
+  vars:
+    is_debug: true
+  tasks:
+    - name: Print debug message
+      debug:
+        msg: "Debug mode is enabled"
+      when: is_debug

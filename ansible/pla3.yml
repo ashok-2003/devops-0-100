@@ -1,0 +1,21 @@
+- name: Example Playbook with Registered Variables
+
+  hosts: localhost
+
+  tasks:
+
+    - name: Check if a file exists
+
+      stat:
+
+        path: /path/to/file
+
+      register: file_status
+
+    - name: Print message if file exists
+
+      debug:
+
+        msg: "The file exists"
+
+      when: file_status.stat.exists

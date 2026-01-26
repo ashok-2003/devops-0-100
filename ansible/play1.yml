@@ -1,0 +1,15 @@
+- name: Example Playbook with Variables
+
+  hosts: localhost
+
+  vars:
+
+    example_var: true
+
+  tasks:
+
+    - name: Print variable value
+
+      debug:
+
+        var: example_var

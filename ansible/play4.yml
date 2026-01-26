@@ -1,0 +1,24 @@
+- name: Comprehensive Playbook with Conditional Statements
+  hosts: localhost
+  vars:
+    var1: true
+    var2: false
+    file_path: "./play2.yml"
+  tasks:
+    - name: Check if the file exists
+      stat:
+        path: "{{ file_path }}"
+      register: file_status
+    - name: Print message if both conditions are true
+      debug:
+        msg: "Both conditions are true"
+      when: var1 and var2
+    - name: Print message if file exists
+      debug:
+        msg: "The file exists"
+      when: file_status.stat.exists
+    - name: Print message if either condition is true
+      debug:
+        msg: "At least one condition is true or the file exists"
+      when: var1 or var2 or file_status.stat.exists
+
